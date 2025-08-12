@@ -22,7 +22,11 @@
 streamlit run app.py
 ```
 
-#### 4. Streamlit 배포
+## 📃 목표 구성 
+
+![images](https://github.com/user-attachments/assets/b4838790-a7b9-4122-ab35-83c4af46635f)
+
+### 🚀 Streamlit 배포
 
 ##### 런타임 및 배포 방식
 - Runtime: Python 3.1
@@ -53,15 +57,57 @@ streamlit run app.py
 ```bash
 bash /home/site/wwwroot/streamlit.sh
 ```
+- streamlit.sh에 배포 .py 지정 및 pip 지정
+- .env를 애저포탈 서비스 내 설정 > 환경변수로 대체해도 된다
 - Azure 포탈 > App Service > 개요 > 다시시작
 - 로그 스트림으로 확인하기
 
+### 🔓 스토리지 생성, AI Seach (RAG)
+
+![images](https://github.com/user-attachments/assets/04668e00-86fd-48c3-b2f2-c8c59aa8379b)
+
+#### 1. Azure Portal > 스토리지 계정 > 만들기  
+   - 기본서비스 Azure Blob Storage 또는 Azure Data Lake Storage Gen2 성능 표준, 중복도 LRS
+
+#### 2. 스토리지 계정 > 데이터 스토리지 > 컨테이너 > 만들기  
+   - 업로드한 파일을 blob이라 한다.
+   - blob을 클릭하면 개요에 url 이나온다. (권한이 없으면 url입려해도 조회가 안된다)
+   - 개요 > Blob 익명 액세스 > 사용 안 함(사용으로 변경)
+   - 만든 컨테이너 들어가서 > 엑세스 수준 변경(blob 수준으로 많이 준다)
+
+#### 3. Azure AI Search 만들기   
+   - 켜 놓을때마다 과금됨(기본정도로 사용)
+   - 기존 만든 OpenAI에 text-embedding-3-small 새로 배포
+
+#### 4. 데이터 가져오기(정확히 일치)
+   - 데이터소스: Azure blob Storage
+   - 이름: pdf-dataset
+   - 구분 분석 모드: 기본값
+   - 연결 문자열: 스토리지계정 > 보안+네트워킹 > 엑세스 키 > 연결 문자열
+   - 컨테이너 명 :컨테이너 명 넣기
+   - 인덱스 단계 > 인덱스 입력, 키 그대로 기본으로 가면 됨
+   - 인덱서 단계 > 일정 한번
+     
+#### 5. 데이터 가져오기 및 벡터화(유사도 까지)
+   - Azure blob Storage > RAG
+   - 데이터연결: (blob stoage관련 선택), 폴더(root라서), 고급설정 다 기본값, 
+   - 텍스트 벡터화: (ai search 관련 선택), 가격관련 체크하기
+   - 이미지 벡터화: 비우고 다음
+   - 고급설정: 비우고 다음
+   - 검토 및 만들기 : car2
+
+#### Computer Vision 
+   -  마켓플레이스 > 'Azure ai 서비스' 리소스 바로 만들기
+  
 ## 📘 강의 통해 배운 것
+
+0. **sku(스쿠) = 사양**
 
 1. **테넌트 (Tenant) = 디렉토리 (Directory)**
    - 아이디들의 집합
    - LIMIT 단위는 테넌트 기준
    - 구독(Subscription)들의 집합 → 비용 관리 단위
+   - 그렇기에 리소스 나눠씀
 
 2. **리소스 그룹 (Resource Group)**
    - 이름에 `rg`를 붙이는 관습이 있음
@@ -86,3 +132,4 @@ bash /home/site/wwwroot/streamlit.sh
      2. 테넌트: 여러 사용자/조직이 공유 → 각자 사용하도록 `vnet` 생성  
      3. `vnet`이 다르면 완전히 다른 네트워크 (팀/서비스 단위로도 큼)  
      4. `vnet` 내부를 `subnet`으로 세분화하여 관리
+   

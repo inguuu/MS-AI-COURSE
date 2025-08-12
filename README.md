@@ -1,18 +1,15 @@
-# MS-AI
-MS AI 개발과정 실습 파일
+## ⚙️ 초기 설정
 
-
-
-# 1. Azure openai 
-- 리소스 그룹 생성
+### 1. Azure OpenAI 만들기
 - Azure OpenAI 만들고
-- Azure AI Foundry 모델카탈로그 배포(이름과 분당토큰 고려, 같은 리소스 내까지 영향 줌)
-- Azure AI Foundry 배포 내용으로 저장되어 .env 파일과 맞춰야함
+- Azure AI Foundry 보거나 키에서 확인
+- Azure AI Foundry 배포 내용 확인 후 `.env` 파일 환경 변수 맞추기
 
-# 2. vscode에 파이썬 설정
-- pip 인스톨 해야할수도
-- where pyhon 터미널에서 확인 
-- 검색 창에 > select inerpreter 검색 > 경로로 입력해서 파이썬 설치한거 추가해주기
-- 
-# 3. https://streamlit.io/
-- 메일입력해도 무시해도 됨
+### 2. VSCode에 Python 설정
+- 필요 시 `pip install`로 패키지 설치
+- 터미널에서 `where python`으로 경로 확인
+- VSCode 명령 팔레트에서 `> Python: Select Interpreter` 검색 후 경로 입력하여 설치된 Python 추가
+
+### 3. Streamlit 설치
+- [https://streamlit.io/](https://streamlit.io/) 접속
+- 회원가입 시 메일 입력은 건너뛰어도 됨

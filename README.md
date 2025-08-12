@@ -49,7 +49,12 @@ streamlit run app.py
 - Azure 아이콘 클릭 > 추가 > 로그인 진행
 - App Service 내 확인하기
 - [Azure Web App에 Streamlit 배포하기](02.streamlit_deployment.md) 참조: 김영욱 강사님 https://github.com/KoreaEva
-
+- Azure 포탈 > App Service > 구성 > 시작명령에 넣고 저장
+```bash
+bash /home/sit/wwwroot/streamlit.sh
+```
+- Azure 포탈 > App Service > 개요 > 다시시작
+- 로그 스트림으로 확인하기
 
 ## 📘 강의 통해 배운 것
 

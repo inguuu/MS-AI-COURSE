@@ -102,6 +102,25 @@ bash /home/site/wwwroot/streamlit.sh
      pip install azure-ai-vision-imageanalysis
      pip install azure-core
   ```
+1. **사진 분석 VisualFeatures**
+ - TAGS → 키워드 목록 (이미지의 주요 특징)
+ - CAPTION → 짧은 설명 문장
+ - OBJECTS → 객체별 이름 + 위치 좌표 (시각화 가능)
+ - 
+2. **감정 분석**
+ - Azure Language Studio
+ - Azure > 마켓플레이스> '언어 서비스' 만들기
+
+## AI Search 테스트 
+ - https://github.com/MicrosoftLearning/mslearn-knowledge-mining
+ - https://microsoftlearning.github.io/mslearn-knowledge-mining/Instructions/Exercises/01-azure-search.html#upload-documents-to-azure-storage
+
+ - git clone https://github.com/MicrosoftLearning/mslearn-knowledge-mining
+ - az cli 설치 후 로그인
+ - UploadDocs.cmd (윈도우 기준) 설정
+ - VSCODE 에서 테스트 하고 싶은 폴더 경로(01.aiserch ~~)에서 터미널로 실행  .\UploadDocs.cmd(그냥 스토리지에 직접 업로드해도됨)
+ - AI SEARCH > 인덱스(데이터가져오기) > 위치이름,핵심구추출,언어검색,태그생성,캡션생성 (위의 가이드대로 따라해야함)
+ - 인덱서, 인덱스 설정 완료 후 개요에 검색 탐색기로 테스트 > 보기: json view, 전체보려면 *로 검색
 ## 📘 강의 통해 배운 것
 
 0. **sku(스쿠) = 사양**
@@ -139,3 +158,14 @@ bash /home/site/wwwroot/streamlit.sh
 6. **전송 요청**
    - 서비스 호출 시 key, endpoint 를 넘기지 않고 최초만 넘기고 토큰으로 돌려준다
    - 예전에는 토큰이라 부르는데 key credential이라 많이 부른다(탈취 당해도 시간 제한)
+
+7.  **이미지 가공**
+   - 이미지(jpg, png 등) 분석해서 그리거나 다루려면 bitmap으로 나눠야 한다
+
+8. **AI 서치와 AI 서비스는 같은 리전에 만들어야함**
+
+9. **cli**
+   - Command Line Interface
+   - 자체 툴이 있음 > window는 MSI 파일로 설치
+   - az 명령어 사용 가능해짐
+

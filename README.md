@@ -98,7 +98,10 @@ bash /home/site/wwwroot/streamlit.sh
 
 ### 💻 Computer Vision 
    -  마켓플레이스 > 'Azure ai 서비스' 리소스 바로 만들기
-  
+  ```bash
+     pip install azure-ai-vision-imageanalysis
+     pip install azure-core
+  ```
 ## 📘 강의 통해 배운 것
 
 0. **sku(스쿠) = 사양**
@@ -132,4 +135,7 @@ bash /home/site/wwwroot/streamlit.sh
      2. 테넌트: 여러 사용자/조직이 공유 → 각자 사용하도록 `vnet` 생성  
      3. `vnet`이 다르면 완전히 다른 네트워크 (팀/서비스 단위로도 큼)  
      4. `vnet` 내부를 `subnet`으로 세분화하여 관리
-   
+    
+6. **전송 요청**
+   - 서비스 호출 시 key, endpoint 를 넘기지 않고 최초만 넘기고 토큰으로 돌려준다
+   - 예전에는 토큰이라 부르는데 key credential이라 많이 부른다(탈취 당해도 시간 제한)

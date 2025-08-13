@@ -96,7 +96,7 @@ bash /home/site/wwwroot/streamlit.sh
    - 고급설정: 비우고 다음
    - 검토 및 만들기 : car2
 
-#### Computer Vision 
+### 💻 Computer Vision 
    -  마켓플레이스 > 'Azure ai 서비스' 리소스 바로 만들기
   
 ## 📘 강의 통해 배운 것

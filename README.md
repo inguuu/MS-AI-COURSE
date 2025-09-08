@@ -168,4 +168,9 @@ bash /home/site/wwwroot/streamlit.sh
    - Command Line Interface
    - 자체 툴이 있음 > window는 MSI 파일로 설치
    - az 명령어 사용 가능해짐
+   - 
+10. **COSMOS DB**
+   - 여러 디비 있음 postgre 등 다 있음
+   - 실시간 복제
+   - 로그 담지마라 돈 엄청 나옴
 

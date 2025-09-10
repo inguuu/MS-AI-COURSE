@@ -2,8 +2,8 @@
 
 ## ⚙️ 초기 설정
 
-#### 1. Azure OpenAI 만들기
-- Azure OpenAI 만들고
+#### 1. Azure OpenAI 생성
+- Azure OpenAI 생성
 - Azure AI Foundry 보거나 키에서 확인
 - 배포 하고 모델 코드 랑 맞추기
 ```bash
@@ -31,6 +31,10 @@
 ```bash
 streamlit run app.py
 ```
+
+#### 4. AZURE AI SEARCH 생성
+- AZURE AI SEARCH 생성
+- index_setup.py 수정 후 실행 
 
 ## 📃 목표 구성 
 

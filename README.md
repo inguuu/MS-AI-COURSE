@@ -10,7 +10,8 @@
 #### 2. VSCode에 Python 설정
 - 필요 시 `pip install`로 패키지 설치
 - 터미널에서 `where python`으로 경로 확인
-- VSCode 명령 팔레트에서 `> Python: Select Interpreter` 검색 후 경로 입력하여 설치된 Python 추가
+- VSCode 명령 팔레트(ctrl + shift + p)에서 `> Python: Select Interpreter` 검색 후 경로 입력하여 설치된 Python 추가
+
 
 #### 3. Streamlit 설정
 - [https://streamlit.io/](https://streamlit.io/) 접속

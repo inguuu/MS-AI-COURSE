@@ -31,10 +31,13 @@
 ```bash
 streamlit run app.py
 ```
-
-#### 4. AZURE AI SEARCH 생성
+#### 4. BlobStorage, AZURE AI SERVICE 생성
+ - AZURE AI SERVICE 만들어야 인덱서가 됨(AZURE OPENAI 와 다름)
+   
+#### 5. AZURE AI SEARCH 생성
 - AZURE AI SEARCH 생성
-- index_setup.py 수정 후 실행 
+- index_setup.py 수정 후 실행
+- 인덱스, 스킬셋(OCR), 인덱서 생성
 
 ## 📃 목표 구성 
 

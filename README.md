@@ -5,6 +5,15 @@
 #### 1. Azure OpenAI 만들기
 - Azure OpenAI 만들고
 - Azure AI Foundry 보거나 키에서 확인
+- 배포 하고 모델 코드 랑 맞추기
+```bash
+   response = openai.chat.completions.create(
+        model="gpt-4.1-mini",  
+        messages=messages,
+        max_tokens= 1000,
+        temperature= 0.7,
+    )
+```
 - Azure AI Foundry 배포 내용 확인 후 `.env` 파일 환경 변수 맞추기
 
 #### 2. VSCode에 Python 설정
